@@ -30,7 +30,7 @@ class SorscherRNN(torch.nn.Module):
         for param in self.parameters():
             torch.nn.init.xavier_uniform_(param.data, gain=1.0)
 
-        self.optimizer = torch.optim.Adam(lr= 1e-4)
+        self.optimizer = torch.optim.Adam(self.parameters(), lr=1e-4)
 
     @property
     def device(self):
